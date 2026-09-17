@@ -21,3 +21,12 @@ SELECT
     SUM(CASE WHEN ordered_qty IS NULL THEN 1 ELSE 0 END) AS missing_ordered_qty,
     SUM(CASE WHEN received_qty IS NULL THEN 1 ELSE 0 END) AS missing_received_qty
 FROM purchase_orders;
+
+-- 3. Invalid Quantity & Date Logic Check
+
+SELECT
+    SUM(CASE WHEN ordered_qty <= 0 THEN 1 ELSE 0 END) AS invalid_ordered_qty,
+    SUM(CASE WHEN received_qty < 0 THEN 1 ELSE 0 END) AS invalid_received_qty,
+    SUM(CASE WHEN promised_date < order_date THEN 1 ELSE 0 END) AS promised_before_order,
+    SUM(CASE WHEN receipt_date < order_date THEN 1 ELSE 0 END) AS receipt_before_order
+FROM purchase_orders;
