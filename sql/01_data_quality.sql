@@ -30,3 +30,9 @@ SELECT
     SUM(CASE WHEN promised_date < order_date THEN 1 ELSE 0 END) AS promised_before_order,
     SUM(CASE WHEN receipt_date < order_date THEN 1 ELSE 0 END) AS receipt_before_order
 FROM purchase_orders;
+-- Finding:
+-- Quantity checks returned no invalid values.
+-- However, 6,564 POs have promised dates before order dates,
+-- and 6,680 POs have receipt dates before order dates.
+-- These records were flagged as potential date-quality issues
+-- requiring business/source-system validation.
