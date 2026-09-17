@@ -40,3 +40,26 @@ FROM quality_incidents
 
 GROUP BY defect_type
 ORDER BY quality_incident_count DESC;
+
+-- 3. Supplier-Level Quality Validation
+
+SELECT
+    supplier_id,
+
+    COUNT(DISTINCT incident_id) AS quality_incident_count,
+
+    SUM(scrap_qty) AS total_scrapped_qty,
+
+    ROUND(
+        100.0 * COUNT(DISTINCT CASE
+            WHEN defect_severity = 'Critical'
+            THEN incident_id
+        END)
+        / COUNT(DISTINCT incident_id),
+        1
+    ) AS critical_incident_pct
+
+FROM quality_incidents
+
+GROUP BY supplier_id
+ORDER BY quality_incident_count DESC;
