@@ -126,3 +126,41 @@ FROM parsed_history p
 CROSS JOIN latest_snapshot l
 WHERE p.parsed_date = l.latest_date
 GROUP BY l.latest_date;
+
+-- 5. Top Backorder Risk by Part
+-- Uses the latest inventory snapshot only.
+
+WITH parsed_history AS (
+    SELECT
+        *,
+        printf(
+            '%04d-%02d-%02d',
+            CAST(substr(Date, -4) AS INTEGER),
+            CAST(substr(Date, 1, instr(Date, '/') - 1) AS INTEGER),
+            CAST(substr(
+                Date,
+                instr(Date, '/') + 1,
+                instr(substr(Date, instr(Date, '/') + 1), '/') - 1
+            ) AS INTEGER)
+        ) AS parsed_date
+    FROM supply_chain_history
+),
+
+latest_snapshot AS (
+    SELECT MAX(parsed_date) AS latest_date
+    FROM parsed_history
+)
+
+SELECT
+    p.part_id,
+    SUM(p.backorder_qty) AS backorder_qty,
+    SUM(p.on_hand_qty) - SUM(p.blocked_qty) AS available_qty
+
+FROM parsed_history p
+CROSS JOIN latest_snapshot l
+
+WHERE p.parsed_date = l.latest_date
+GROUP BY p.part_id
+HAVING SUM(p.backorder_qty) > 0
+ORDER BY backorder_qty DESC
+LIMIT 10;
