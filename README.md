@@ -14,30 +14,17 @@ The analysis was designed to answer four core business questions:
 - Where are quality incidents and scrap creating operational risk?
 
 ## Dashboard
-
 ### Executive Overview
-
-![Executive Overview](screenshots/executive_overview.png)
-
-Provides an executive view of service levels, forecast performance, inventory exposure, and quality risk.
+![Executive Overview](./executive_overview.png)
 
 ### Forecast Performance
-
-![Forecast Performance](screenshots/forecast_performance.png)
-
-Analyzes forecast accuracy using WAPE, Forecast Bias, and Absolute Error across sites and part families.
+![Forecast Performance](./forecast_performance.png)
 
 ### Inventory & Supplier Risk
-
-![Inventory & Supplier Risk](screenshots/inventory_supplier_risk.png)
-
-Highlights latest inventory exposure, backorder risk, and supplier delivery/quality performance.
+![Inventory & Supplier Risk](./inventory_supplier_risk.png)
 
 ### Quality Performance
-
-![Quality Performance](screenshots/quality_performance.png)
-
-Analyzes quality incidents, scrap impact, defect types, and product-family risk.
+![Quality Performance](./quality_performance.png)
 
 ## Key KPIs
 
