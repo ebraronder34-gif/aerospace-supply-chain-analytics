@@ -108,17 +108,18 @@ Dataset created by Roberto Carlos T.
 
 text
 aerospace-supply-chain-analytics/
+│
 ├── README.md
-├── sql/
-│   ├── 01_data_quality.sql
-│   ├── 02_supplier_delivery_validation.sql
-│   ├── 03_forecast_inventory_validation.sql
-│   └── 04_quality_validation.sql
-└── screenshots/
-    ├── executive_overview.png
-    ├── forecast_performance.png
-    ├── inventory_supplier_risk.png
-    └── quality_performance.png
+├── executive_overview.png
+├── forecast_performance.png
+├── inventory_supplier_risk.png
+├── quality_performance.png
+│
+└── sql/
+    ├── 01_data_quality.sql
+    ├── 02_supplier_delivery_validation.sql
+    ├── 03_forecast_inventory_validation.sql
+    └── 04_quality_validation.sql
 
 
 ## Project Context
