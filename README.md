@@ -69,10 +69,12 @@ The validation layer includes:
 
 SQL files:
 
-- sql/01_data_quality.sql
-- sql/02_supplier_delivery_validation.sql
-- sql/03_forecast_inventory_validation.sql
-- sql/04_quality_validation.sql
+### SQL Files
+
+- [01 — Data Quality Validation](./sql/01_data_quality.sql)
+- [02 — Supplier Delivery Validation](./sql/02_supplier_delivery_validation.sql)
+- [03 — Forecast & Inventory Validation](./sql/03_forecast_inventory_validation.sql)
+- [04 — Quality Validation](./sql/04_quality_validation.sql)
 
 ## Data Quality Note
 
