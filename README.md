@@ -104,22 +104,20 @@ The dataset is synthetic and distributed under the *MIT License*. Raw source fil
 
 Dataset created by Roberto Carlos T.
 
+
 ## Repository Structure
 
-text
-aerospace-supply-chain-analytics/
-│
-├── README.md
-├── executive_overview.png
-├── forecast_performance.png
-├── inventory_supplier_risk.png
-├── quality_performance.png
-│
-└── sql/
-    ├── 01_data_quality.sql
-    ├── 02_supplier_delivery_validation.sql
-    ├── 03_forecast_inventory_validation.sql
-    └── 04_quality_validation.sql
+- *README.md* — Project overview, business insights, and documentation
+- *Dashboard Screenshots*
+  - executive_overview.png
+  - forecast_performance.png
+  - inventory_supplier_risk.png
+  - quality_performance.png
+- *sql/*
+  - [01_data_quality.sql](./sql/01_data_quality.sql)
+  - [02_supplier_delivery_validation.sql](./sql/02_supplier_delivery_validation.sql)
+  - [03_forecast_inventory_validation.sql](./sql/03_forecast_inventory_validation.sql)
+  - [04_quality_validation.sql](./sql/04_quality_validation.sql)
 
 
 ## Project Context
